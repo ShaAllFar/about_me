@@ -60,7 +60,6 @@ else{
   correctAnswers++;
 }
 
-
 if(correctAnswers === 3){
   alert('Congratulations, You got all the answers correct');
 }
