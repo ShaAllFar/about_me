@@ -41,7 +41,7 @@ var answerFour = prompt('Did Shawn play basketball in college?').toLowerCase();
 console.log('Did Shawn play basketball in college? user answer = ' + answerFour);
 if(answerFour === 'y' || answerFour === 'yes'){
   alert('Incorrect, Shawn played Basketball in high school');
-  incorrect++;
+  incorrectAnswers++;
 }
 else{
   alert('Correct, Shawn played Soccer for The Evergreen State College Geoducks');
@@ -60,9 +60,31 @@ else{
   correctAnswers++;
 }
 
-if(correctAnswers === 3){
+if(correctAnswers === 5){
   alert('Congratulations, You got all the answers correct');
 }
 else{
   alert('Game Over\n\nScore:\n' + correctAnswers + ' correct\n' + incorrectAnswers + ' incorrect');
+}
+
+//question6
+var guessTotal = 1;
+var number = 3;
+while(guessTotal <= 4){
+  var userGuess = parseInt(prompt('Im thinking of a number between 1 - 10'));
+  if(isNaN(userGuess)){
+    alert('Input was not a number, try again');
+    guessTotal--;
+  }
+  else if(userGuess === number){
+    alert('Congratualtions you got it');
+    break;
+  }
+  else if(userGuess > number){
+    alert('Too High\n' + guessTotal + ' guesses');
+  }
+  else {
+    alert('Too Low\n' + guessTotal + ' guesses');
+  }
+  guessTotal++;
 }
