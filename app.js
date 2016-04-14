@@ -2,56 +2,36 @@ alert('Shawn Farrow Trivia Game');
 var correctAnswers = 0;
 var username = prompt('What is your name?');
 alert('Hello ' + username + ', nice to meet you.');
-//question1
-var answerOne = prompt('Was Shawn born in Lakewood?').toLowerCase();
-console.log('Was Shawn born in Lakewood? user answer = ' + answerOne);
-if(answerOne === 'y' || answerOne === 'yes'){
-  alert('Incorrect, Shawn was born in Tacoma.');
+//question 1-5
+
+var questions = ['Was Shawn born in Lakewood?', 'Does Shawn have any siblings?', 'Did Shawn go to Lakes High School?', 'Did Shawn play basketball in college?', 'Does Shawn write with his right hand?'];
+
+var answers = ['no', 'yes', 'no', 'no', 'no'];
+
+var correctResponses = ['Correct, Shawn was born in Tacoma, WA. ', 'Correct, Shawn has an older brother named Dwight.', 'Correct, Shawn graduated from Clover Park in 2004.', 'Correct, no he played soccer in college.', 'Correct, he is left handed.'];
+
+var wrongAnswers = ['yes', 'no', 'yes', 'yes', 'yes'];
+
+var incorrect = ('That is not a correct response!!!');
+
+function useQuestion(i){
+  var userAnswer = prompt(questions[i]);
+  if (userAnswer.toLowerCase() === answers[i]){
+    alert (correctResponses[i]);
+    correctAnswers++;
+  }
+  else if (userAnswer.toLowerCase() === wrongAnswers[i]){
+    alert ('You are wrong!!!');
+  }
+  else{
+    alert (incorrect);
+  }
 }
-else{
-  alert('Correct, Shawn was born in Tacoma, WA. ');
-  correctAnswers++;
+
+for (var i = 0; i < questions.length; i++){
+  useQuestion(i);
 }
-//question2
-var answerTwo = prompt('Does Shawn have any siblings?').toLowerCase();
-console.log('Does Shawn have any siblings? user answer = ' + answerTwo);
-if(answerTwo === 'y' || answerTwo === 'yes'){
-  alert('Correct, Shawn has an older brother named Dwight');
-  correctAnswers++;
-}
-else{
-  alert('Incorrect, Shawn has an older brother named Dwight');
-}
-//question3
-var answerThree = prompt('Did Shawn go to Lakes High School?').toLowerCase();
-console.log('Did Shawn go to Lakes High School? user answer = ' + answerThree);
-if(answerThree === 'y' || answerThree === 'yes'){
-  alert('Incorrect, Shawn went to Clover Park High School');
-}
-else{
-  alert('Correct, Shawn graduated from Clover Park in 2004');
-  correctAnswers++;
-}
-//question4
-var answerFour = prompt('Did Shawn play basketball in college?').toLowerCase();
-console.log('Did Shawn play basketball in college? user answer = ' + answerFour);
-if(answerFour === 'y' || answerFour === 'yes'){
-  alert('Incorrect, Shawn played Basketball in high school');
-}
-else{
-  alert('Correct, Shawn played Soccer for The Evergreen State College Geoducks');
-  correctAnswers++;
-}
-//question5
-var answerFive = prompt('Does Shawn write with his right hand?').toLowerCase();
-console.log('Does Shawn write with his right hand? user answer = ' + answerFive);
-if(answerFive === 'yes' || answerFive === 'y'){
-  alert('Incorrect, Shawn writes with his left hand');
-}
-else{
-  alert('Correct, Shawn writes with his left hand but throws a ball with his right hand');
-  correctAnswers++;
-}
+
 //question6
 var guessTotal = 1;
 var number = 3;
