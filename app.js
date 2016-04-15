@@ -4,27 +4,29 @@ var username = prompt('What is your name?');
 alert('Hello ' + username + ', nice to meet you.');
 //question 1-5
 
-var questions = ['Was Shawn born in Lakewood?', 'Does Shawn have any siblings?', 'Did Shawn go to Lakes High School?', 'Did Shawn play basketball in college?', 'Does Shawn write with his right hand?'];
+var questions = ['Was Shawn born in Lakewood?', 'Does Shawn have any siblings?', 'Does Shawn have any children?', 'Did Shawn play basketball in college?', 'Does Shawn write with his right hand?'];
 
-var answers = ['no', 'yes', 'no', 'no', 'no'];
+var answers = [['no', 'n'], ['yes','y'], ['no', 'n'], ['no', 'n'], ['no', 'n']];
 
-var correctResponses = ['Correct, Shawn was born in Tacoma, WA. ', 'Correct, Shawn has an older brother named Dwight.', 'Correct, Shawn graduated from Clover Park in 2004.', 'Correct, no he played soccer in college.', 'Correct, he is left handed.'];
+var correctResponses = ['Correct, he was born in Tacoma, but raised in Lakewood.', 'Correct, he has an older brother named Dwight.', 'Correct, he has no children. Being an uncle is good for now.', 'Correct, he played soccer in college.', 'Correct, he writes with his left, but throws a ball with his right'];
 
-var wrongAnswers = ['yes', 'no', 'yes', 'yes', 'yes'];
+var incorrectResponses = ['Incorrect, he was born in Tacoma, but raised in Lakewood.','Wrong, he has an older brother named Dwight.','Incorrect, he has no children. Being an uncle is good for now.','Incorrect, he played soccer in college.','Incorrect, he writes with his left but throws a ball with his right.'];
 
-var incorrect = ('That is not a correct response!!!');
+var wrongAnswers = [['yes','y'], ['no', 'n'], ['yes','y'], ['yes','y'], ['yes','y']];
+
+var incorrectInput = ('That is not a correct response. yes, y, no, or n are valid answers.');
 
 function useQuestion(i){
-  var userAnswer = prompt(questions[i]);
-  if (userAnswer.toLowerCase() === answers[i]){
+  var userAnswer = prompt(questions[i]).toLowerCase();
+  if (userAnswer === answers[i][0] || userAnswer === answers[i][1]){
     alert (correctResponses[i]);
     correctAnswers++;
   }
-  else if (userAnswer.toLowerCase() === wrongAnswers[i]){
-    alert ('You are wrong!!!');
+  else if (userAnswer === wrongAnswers[i][0] || userAnswer === wrongAnswers[i][1]){
+    alert (incorrectResponses[i]);
   }
   else{
-    alert (incorrect);
+    alert (incorrectInput);
   }
 }
 
@@ -42,7 +44,7 @@ while(guessTotal <= 4){
     guessTotal--;
   }
   else if(userGuess === number){
-    alert('Congratualtions ' + username + ', you got it');
+    alert('Congratualtions, ' + username + ', you got it');
     correctAnswers++;
     break;
   }
