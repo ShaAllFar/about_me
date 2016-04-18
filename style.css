@@ -1,0 +1,64 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+
+}
+
+h3{
+  font-size: 50px;
+}
+
+
+.wrapper {
+  background-color: black;
+  color: white;
+  margin: 0 auto;
+  width: 900px;
+  font-weight: 400;
+
+
+}
+
+.header{
+  text-align: right;
+  height:400px;
+  padding-top: 150px;
+}
+
+.header h1{
+  font-size: 100px;
+  font-weight: 800;
+  margin-bottom: 0px;
+  margin-right: 20px;
+}
+
+.header h2{
+  font-size: 50px;
+  font-weight: 200;
+  margin-top: 0px;
+  margin-right: 20px;
+
+
+}
+.banner{
+  height: 100px;
+  background-color: grey;
+  font-size: 25px;
+  
+
+}
+
+.about_me {
+  margin: 20px;
+}
+
+.education{
+  margin: 20px;
+}
+
+.experience{
+  margin: 20px;
+}
+
+.hobbies{
+  margin: 20px;
+}
